@@ -4,22 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Admin - Manage Books</title>
-    <nav>
-    <a href="../index.html">Home</a> |
-    <a href="../index.html">Logout</a>
-    </nav>
+    
 </head>
 
 <body>
-
+<header>
 <h1>Manage Books</h1>
 
-<a href="admin_add_book.html">Add Book</a>
+<nav>
+    <a href="../index.html">Home</a> |
+    <a href="../pages/admin_add_book.html">Add Book</a> |
+    <a href="../pages/admin_books.html">View Books</a> |
+    <a href="../index.html">Logout</a>
+</nav>
+</header>
+
+<main>
+    <br>
+    <a href="admin_add_book.html">Add Book</a>
+    <hr>
 
 <table border="1">
    <thead>
     <tr>
-      <th width="80"> id </th>
+      <th>ID</th>
       <th>Title</th>
       <th>Author</th>
       <th>Category</th>
@@ -40,13 +48,17 @@
       <td>2</td>
       <td>Available</td>
       <td>
-       <a href="admin_books_details.html">View</a>
+       <a href="admin_book_details.html">View</a>
       </td>
     </tr>
    </tbody>
 
 </table>
+</main>
+
+<footer>
+<p>IS231 - Phase 1</p>
+</footer>
 
 </body>
-
 </html>
