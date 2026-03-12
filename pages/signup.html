@@ -4,10 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sign up</title>
+
 </head>
+
 <body>
+    <header>
+
+    <h2>Sign Up</h2>
     
-    <h1>Sign Up</h1>
+    <nav>
+    <a href="../index.html">Home</a> |
+    <a href="../pages/login.html">Login</a> |
+    <a href="../pages/signup.html">Sign Up</a>
+    </nav>
+
+</header>
+<main>
     <hr>
     <form action="login.html">
 
@@ -31,16 +43,21 @@
         <input type="password" name="confirm_password" id="conpass" placeholder="confirm password" required>
         <br><br>
 
-        <label>Register as Admin:</label>
-        <input type="checkbox" name="is_admin" value="true">
+        <label>User Type:</label>
+        <br>
+        <input type="radio" name="role" value="admin" required> Admin
+        <input type="radio" name="role" value="user"> User
         <br><br>
 
         <input type="submit" value="Sign Up">
 
     </form>
 
-</body>
-</html>
+</main>
+
+<footer>
+<p>IS231 - Phase 1</p>
+</footer>
 
 </body>
 </html>
