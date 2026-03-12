@@ -3,38 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><Search></Search></title>
+    <title>Search Books</title>
 </head>
 
-
-
 <body>
+    <header>
+<h1>Search Books</h1>
+</header>
+
 <nav>
-    <a href="../index.html">home</a>
-    <a href="search.html">Search</a>
-    <a href="borrowed_books.html">borrowed books</a>
+    <a href="../index.html">Home</a> |
+    <a href="../pages/search.html">Search</a> |
+    <a href="../pages/borrowed_books.html">My Books</a> |
+    <a href="../index.html">Logout</a>
 </nav>
 
+<main>
 <hr>
 
-<form method="post">
-<label for="author_name">Enter author name:</label>
-<input type="text" id="author_name" name="author_name">
-<br>
-<label for="book_title">Enter Book title:</label>
-<input type="text" id="book_title" name="book_title">
-<br>
-<label for="Borrowdate">enter borrow date:</label>
-<input type="date" id="Borrowdate" name="Borrowdate">
-<br>
-<label for="returnaldate">enter returnal date:</label>
-<input type="date" id="returnaldate" name="returnaldate">
-<br>
-<input type="submit">
-</form>
+<form>
 
+<table>
+
+<tr>
+<td><label for="author_name">Author Name:</label></td>
+<td><input type="text" id="author_name" name="author_name" required></td>
+</tr>
+
+<tr>
+<td><label for="book_title">Book Title:</label></td>
+<td><input type="text" id="book_title" name="book_title" required></td>
+</tr>
+
+<tr>
+<td><label for="category">Category:</label></td>
+<td>
+<select id="category" name="category">
+<option>Science</option>
+<option>Technology</option>
+<option>History</option>
+<option>Literature</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td></td>
+<td><input type="submit" value="Search"></td>
+</tr>
+
+</table>
+
+</form>
+</main>
+
+<footer>
+<p>IS231 - Phase 1</p>
+</footer>
 
 </body>
-
-
 </html>
