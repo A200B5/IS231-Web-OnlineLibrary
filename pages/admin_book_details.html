@@ -3,13 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Admin - Book Details</title>
-    <nav>
-    <a href="../index.html">Home</a> |
-    <a href="../index.html">Logout</a>
-    </nav>
 </head>
-<body>
 
+<body>  
+<header>
+
+<nav>
+    <a href="../index.html">Home</a> |
+    <a href="../pages/admin_add_book.html">Add Book</a> |
+    <a href="../pages/admin_books.html">View Books</a> |
+    <a href="../index.html">Logout</a>
+</nav>
+
+</header>
+
+<main>
 <img src="https://pubengine.s3.eu-central-1.amazonaws.com/cover/99.150005/9780135398548.jpg" 
 align="left" width="200">
 
@@ -20,8 +28,15 @@ align="left" width="200">
 <p><b>Available Copies:</b> 5</p>
 <p><b>Borrowed Copies:</b> 2</p>
 <p><b>Status:</b> Available</p>
-<button>Delete Book</button>
+<button type="button">Delete Book</button>
 <a href="admin_edit_book.html">Edit Book</a>
+<br><br>
+<a href="admin_books.html">Back to Books</a>
+</main>
+
+<footer>
+<p>IS231 - Phase 1</p>
+</footer>
 
 </body>
 </html>
