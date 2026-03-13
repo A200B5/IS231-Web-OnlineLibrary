@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add a Book - Online Library</title>
+</head>
+<body>
+    <header>
+        <h1>Online Library</h1>
+    </header>
+    <nav>
+    <a href="../index.html">Home</a> |
+    <a href="../pages/admin_add_book.html">Add Book</a> |
+    <a href="../pages/admin_books.html">View Books</a> |
+    <a href="../index.html">Logout</a>
+    </nav>
+    <hr>
+    <main>
+        <p>Book Details</p>
+        <form name="BookDetails" autocomplete="off">
+            <label for="title">Title</label><br>
+            <input type="text" id="title" name="title" required autofocus><br>
+
+            <label for="id">ID</label><br>
+            <input type="number" id="id" name="id" required><br>
+
+            <label for="auther">Auther</label><br>
+            <input type="text" id="auther" name="auther" required><br>
+
+            <label for="description">Description</label><br>
+            <textarea id="description" name="description"></textarea><br>
+
+            <label for="category">Category</label><br>
+            <input list="categories" type="text" id="category" name="category" required><br>
+            <datalist id="categories">
+                <option value="Biography"></option>
+                <option value="History"></option>
+                <option value="Science & Technology"></option>
+                <option value="Self-Help"></option>
+                <option value="Business"></option>
+                <option value="Philosophy"></option>
+                <option value="Religion"></option>
+                <option value="Politics"></option>
+                <option value="Art"></option>
+                <option value="Travel"></option>
+                <option value="Cooking"></option>
+                <option value="Education"></option>
+                <option value="Health "></option>
+                <option value="Literary Fiction"></option>
+                <option value="Mystery"></option>
+                <option value="Fantasy"></option>
+                <option value="Romance"></option>
+                <option value="Historical Fiction"></option>
+                <option value="Horror"></option>
+                <option value="Young Adult"></option>
+                <option value="Children's Books"></option>
+                <option value="Graphic Novels"></option>
+            </datalist>
+            <input type="submit" id="upload" name="upload"><br>
+        </form>
+    </main>
+    <hr>
+    <footer>
+        <p>IS231 - Web Technology - Phase 1</p>
+    </footer>
+</body>
+</html>
