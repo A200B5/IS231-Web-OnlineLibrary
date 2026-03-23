@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <title>sign up</title>
 
 </head>
@@ -24,33 +25,36 @@
     <hr>
     <form action="login.html">
 
-        <label for="txt">Username:</label>
-        <br>
-        <input type="text" name="username" id="txt" placeholder="username" required>
+        <label for="txt">Username</label>
+        <div class="username-box">
+            <input type="text" name="username" id="txt" placeholder="username" required>
+            <button>
+                <i class="fa-solid fa-user"></i>
+            </button>
+        </div>
+
+        <label for="em">Email</label>
+        <input type="email" name="email" id="em" placeholder="example@gmail.com" required>
         <br><br>
 
-        <label for="em">Email:</label>
-        <br>
-        <input type="email" name="email" id="em" placeholder="email" required>
-        <br><br>
+        <label for="pass">Password</label>
+        <div class="password-box">
+            <input type="password" name="password" id="pass" placeholder="*******" required>
+            <button class="btn1">
+                <i class="fa-solid fa-eye"></i>
+            </button>
+        </div>
 
-        <label for="pass">Password:</label>
-        <br>
-        <input type="password" name="password" id="pass" placeholder="password" required>
-        <br><br>
-
-        <label for="conpass">Confirm Password:</label>
-        <br>
+        <label for="conpass">Confirm Password</label>
         <input type="password" name="confirm_password" id="conpass" placeholder="confirm password" required>
         <br><br>
 
-        <label>User Type:</label>
-        <br>
+        <label>User Type</label>
         <input type="radio" name="role" value="admin" required> Admin
         <input type="radio" name="role" value="user"> User
         <br>
 
-        <input type="submit" value="Sign Up">
+        <input class="btn" type="submit" value="Sign Up">
 
     </form>
 

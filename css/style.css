@@ -150,6 +150,34 @@ main {
 }
 
 /* ========================================
+   SIGN UP AND LOGIN CONTENT
+   ======================================== */
+
+.username-box button i {
+  position: absolute;
+  top: 51.7%;
+  right: 507px;
+}
+
+.password-box .btn1 i {
+  position: absolute;
+  top: 81.6%;
+  right: 507px;
+
+}
+
+.password-box .btn2 i {
+  position: absolute;
+  top: 66.8%;
+  right: 507px;
+}
+
+a.login-link {
+  color: var(--success-color);
+}
+
+
+/* ========================================
    SECTIONS
    ======================================== */
 

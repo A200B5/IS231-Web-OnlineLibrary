@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login</title>
 
@@ -24,19 +25,25 @@
     <hr>
     <form>
 
-        <label for="txt">Username:</label>
-        <br>
-        <input type="text" name="username" id="txt" placeholder="username" required>
-        <br><br>
+        <label for="txt">Username</label>
+        <div class="username-box">     
+            <input type="text" name="username" id="txt" placeholder="username" required>
+            <button>
+                <i class="fa-solid fa-user"></i>
+            </button>
+        </div>
 
-        <label for="pass">Password:</label>
+        <label for="pass">Password</label>
+        <div class="password-box">
+            <input type="password" name="password" id="pass" placeholder="*******" required>
+            <button class="btn2">
+                <i class="fa-solid fa-eye"></i>
+            </button>
+        </div>
+        
+        <input class="btn btn-success" type="submit" value="Login">
         <br>
-        <input type="password" name="password" id="pass" placeholder="password" required>
-        <br><br>
-
-        <input  type="submit" value="Login">
-        <br>
-        <p>Don't have an account? <a  href="signup.html">Sign Up</a></p>
+        <p>Don't have an account? <a class="login-link" href="signup.html">Sign Up</a></p>
     </form>
 
 </main>
