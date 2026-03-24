@@ -9,7 +9,7 @@
 
 </head>
 
-<body>
+<body class="login-page">
 <header>
 
     <h1>Login</h1>
@@ -23,21 +23,21 @@
 </header>
 <main>
     <hr>
-    <form>
+    <form id="loginForm">
 
-        <label for="txt">Username</label>
+        <label for="username">Username</label>
         <div class="username-box">     
-            <input type="text" name="username" id="txt" placeholder="username" required>
-            <button>
+            <input type="text" id="username" placeholder="username" required>
+            <button type="button">
                 <i class="fa-solid fa-user"></i>
             </button>
         </div>
 
-        <label for="pass">Password</label>
+        <label for="password">Password</label>
         <div class="password-box">
-            <input type="password" name="password" id="pass" placeholder="*******" required>
-            <button class="btn2">
-                <i class="fa-solid fa-eye"></i>
+            <input type="password" id="password" placeholder="********" required>
+            <button type="button" class="btn2">
+                <i class="fa-solid fa-eye-slash"></i>
             </button>
         </div>
         
@@ -52,5 +52,6 @@
 <p>IS231 - Phase 1</p>
 </footer>
 
+<script src="../js/auth.js"></script>
 </body>
 </html>
