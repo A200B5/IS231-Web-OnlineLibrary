@@ -150,6 +150,88 @@ main {
 }
 
 /* ========================================
+   USER BOOK DETAILS - CARD LAYOUT
+   ======================================== */
+
+.book-details-card{
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 2rem;
+  align-items: start;
+
+  /* card look */
+  background: var(--light-text);
+  border: 1px solid rgba(189, 195, 199, 0.7);
+  border-radius: 14px;
+  padding: 2rem;
+  box-shadow: var(--shadow);
+}
+
+.book-details-card__cover img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+}
+
+.book-details-card__content{
+  min-width: 0; /* prevents overflow */
+}
+
+.book-details-card__header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.book-details-card__title{
+  margin: 0; /* override default h2 margin-bottom from global */
+  border: none; /* override h2 border-bottom from global */
+  padding: 0;
+}
+
+.book-details-card__meta{
+  margin-bottom: 0.75rem;
+  color: #555;
+  font-size: 1.05rem;
+}
+
+/* Status badge */
+.status-badge{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.status-badge--available{
+  color: #006417;
+  background: rgba(39, 174, 96, 0.45);
+  border-color: rgba(39, 174, 96, 0.25);
+}
+
+.status-badge--borrowed{
+  color: #b02a37;
+  background: rgba(231, 76, 60, 0.10);
+  border-color: rgba(231, 76, 60, 0.25);
+}
+
+.book-details-card__actions{
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1.25rem;
+}
+
+/* ========================================
    SECTIONS
    ======================================== */
 
@@ -270,7 +352,7 @@ footer p {
    BUTTONS & LINKS
    ======================================== */
 
-.btn, a.btn {
+.btn  , a.btn {
   display: inline-block;
   padding: 0.8rem 2rem;
   background-color: var(--secondary-color);
@@ -286,7 +368,7 @@ footer p {
   margin-top: 1rem;
 }
 
-.btn:hover, a.btn:hover {
+.btn:hover  , a.btn:hover {
   background-color: var(--accent-color);
   box-shadow: var(--shadow-lg);
   transform: translateY(-3px);
@@ -469,6 +551,18 @@ textarea {
 
   footer {
     padding: 1.5rem;
+  }
+  .book-details-card{
+    grid-template-columns: 1fr;
+  }
+
+  .book-details-card__cover{
+    max-width: 320px;
+  }
+
+  .book-details-card__header{
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 
