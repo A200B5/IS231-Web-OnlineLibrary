@@ -22,27 +22,33 @@
 <hr>
 
 <main>
+  <section class="book-details-card">
+    <div class="book-details-card__cover">
+      <img class="book-image" src="" alt="book cover">
+    </div>
 
-<img src="https://pubengine.s3.eu-central-1.amazonaws.com/cover/99.150005/9780135398548.jpg" 
-align="left" width="200">
-
-<h2>Clean Code</h2>
-
-<p><strong>Author:</strong> Robert C. Martin</p>
-<p><strong>Category:</strong> Programming</p>
-<p><strong>Published Year:</strong> 2008</p>
-<p><strong>Status:</strong> Available</p>
-
-<button>Borrow Book</button>
-
-<br><br>
-
-<a href="user_books.html">Back to Books</a>
-
+    <div class="book-details-card__content">
+      <div class="book-details-card__header">
+        <h2 class="book-details-card__title"></h2>
+        <span class="status-badge status-badge--available"></span>
+      </div>
+      <div class="meta">
+      <p class="book-details-card__meta book-author"><strong>Author:</strong> </p>
+      <p class="book-details-card__meta book-category"><strong>Category:</strong> </p>
+      <p class="book-details-card__meta book-year"><strong>Published Year:</strong> </p>
+      </div>
+      <div class="book-details-card__actions">
+        <button class="btn btn-primary borrow-btn" type="button">Borrow Book</button>
+        <a class="btn" href="user_books.html">Back to Books</a>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer>
 <p>IS231 - Phase 1</p>
 </footer>
+<script src="../js/books.js"></script>
+<script src="../js/book_details.js"></script>
 </body>
 </html>
