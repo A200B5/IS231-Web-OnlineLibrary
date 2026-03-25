@@ -25,25 +25,31 @@
     <hr>
     <form id="loginForm">
 
-        <label for="username">Username</label>
-        <div class="username-box">     
-            <input type="text" id="username" placeholder="username" required>
+        <label for="username_email">Email or Username</label>    
+        <div class="username-email-box"> 
+            <input type="text" id="username_email" required>
             <button type="button">
                 <i class="fa-solid fa-user"></i>
             </button>
         </div>
+        <br>
 
-        <label for="password">Password</label>
+        <div class="password-header">
+            <label for="password">Password</label>
+            <a class="forget-password">Forgot Password?</a>
+        </div>
         <div class="password-box">
             <input type="password" id="password" placeholder="********" required>
-            <button type="button" class="btn2">
-                <i class="fa-solid fa-eye-slash"></i>
+            <button type="button" class="toggle-password">
+                <i class="fa-regular fa-eye-slash"></i>
             </button>
         </div>
+        <br>
         
         <input class="btn btn-success" type="submit" value="Login">
         <br>
         <p>Don't have an account? <a class="login-link" href="signup.html">Sign Up</a></p>
+
     </form>
 
 </main>

@@ -5,10 +5,11 @@ if (signupForm) {
     signupForm.addEventListener("submit", function (e) {
         e.preventDefault();
 
-        const username = document.querySelector("#username").value;
-        const email = document.querySelector("#email").value;
-        const password = document.querySelector("#password").value;
-        const confirmPassword = document.querySelector("#confirmPassword").value;
+        const username = signupForm.querySelector("#username").value.trim();
+        const email = signupForm.querySelector("#email").value.trim();
+        const password = signupForm.querySelector("#password").value;
+        const confirmPassword = signupForm.querySelector("#confirmPassword").value;
+        const role = signupForm.querySelector('input[name="role"]:checked').value;
 
         // Password strength
         const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
@@ -23,7 +24,7 @@ if (signupForm) {
             return;
         }
 
-        const user = { username, email, password };
+        const user = { username, email, password, role };
         localStorage.setItem("user", JSON.stringify(user));
 
         alert("Signup successful!");
@@ -33,53 +34,63 @@ if (signupForm) {
 
 
 // ================= LOGIN =================
-const loginForm = document.querySelector("#loginForm");
+const loginForm = document.getElementById("loginForm");
 
 if (loginForm) {
     loginForm.addEventListener("submit", function (e) {
         e.preventDefault();
 
-        const username = document.querySelector("#username").value;
-        const password = document.querySelector("#password").value;
+        const input = loginForm.querySelector("#username_email").value.trim();
+        const password = loginForm.querySelector("#password").value;
 
+        // Get saved user
         const savedUser = JSON.parse(localStorage.getItem("user"));
 
+        // No user found
         if (!savedUser) {
-            alert("No user found! Please sign up.");
+            alert("No account found! Please sign up first.");
             return;
         }
 
-        if (username === savedUser.username && password === savedUser.password) {
+        // Check username or email
+        const isValidUser =
+            input === savedUser.username ||
+            input === savedUser.email;
+
+        // Final check
+        if (isValidUser && password === savedUser.password) {
             alert("Login successful!");
-        } else {
-            alert("Invalid username or password!");
+
+            // Save logged-in user
+            localStorage.setItem("loggedInUser", savedUser.username);
+
+        } 
+
+        else {
+            alert("Invalid email/username or password!");
         }
     });
 }
 
 
 // ================= SHOW/HIDE PASSWORD =================
-document.querySelectorAll(".btn1, .btn2").forEach(btn => {
+document.querySelectorAll(".toggle-password").forEach(btn => {
     btn.addEventListener("click", function () {
         const input = this.parentElement.querySelector("input");
         const icon = this.querySelector("i");
 
-        if (input.type === "password") {
-            input.type = "text";
-            icon.classList.remove("fa-eye-slash");
-            icon.classList.add("fa-eye");
+        const isHidden = input.type === "password";
 
-        } else {
-            input.type = "password";
-            icon.classList.remove("fa-eye");
-            icon.classList.add("fa-eye-slash");
-        }
+        input.type = isHidden ? "text" : "password";
+
+        icon.classList.toggle("fa-eye");
+        icon.classList.toggle("fa-eye-slash");
     });
 });
 
 
 // ================= USER ICON FOCUS =================
-document.querySelectorAll(".username-box button").forEach(btn => {
+document.querySelectorAll(".username-email-box button").forEach(btn => {
     btn.addEventListener("click", function () {
         const input = this.parentElement.querySelector("input");
         input.focus();

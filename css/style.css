@@ -153,26 +153,72 @@ main {
    SIGN UP AND LOGIN CONTENT
    ======================================== */
 
-.signup-page main .username-box button i, .login-page main .username-box button i  {
-  position: absolute;
-  top: 51.7%;
-  right: 507px;
+.username-email-box, .password-box {
+  position: relative;
 }
 
-.signup-page main .password-box .btn1 i {
+.username-email-box button, .password-box button {
   position: absolute;
-  top: 81.6%;
-  right: 507px;
-
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
-.login-page main .password-box .btn2 i {
-  position: absolute;
-  top: 66.8%;
-  right: 507px;
+.username-email-box button i, .password-box button i {
+  font-size: 16px;
 }
 
-.login-page main a.login-link {
+.user-type {
+  margin-top: 15px;
+}
+
+.roles {
+  display: flex;
+  gap: 15px;
+  margin-top: 8px;
+}
+
+.role-option {
+  cursor: pointer;
+}
+
+.role-option input {
+  display: none;
+}
+
+.role-option span {
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.role-option:hover span {
+  border-color: black;
+}
+
+.role-option input:checked + span {
+  background-color: black;
+  color: white;
+  border-color: black;
+}
+
+.password-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.forget-password {
+  color: var(--success-color);
+  cursor: pointer;
+}
+
+.login-link {
   color: var(--success-color);
 }
 
