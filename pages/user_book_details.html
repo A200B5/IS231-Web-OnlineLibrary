@@ -1,1 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Book Details - Online Library</title>
+</head>
+<body>
+    <header>
+<h1>Online Library</h1>
 
+<nav>
+<a href="../index.html">Home</a> |
+<a href="../pages/search.html">Search</a> |
+<a href="../pages/borrowed_books.html">My Books</a> |
+<a href="../index.html">Logout</a>
+</nav>
+
+</header>
+
+<hr>
+
+<main>
+  <section class="book-details-card">
+    <div class="book-details-card__cover">
+      <img class="book-image" src="" alt="book cover">
+    </div>
+
+    <div class="book-details-card__content">
+      <div class="book-details-card__header">
+        <h2 class="book-details-card__title"></h2>
+        <span class="status-badge status-badge--available"></span>
+      </div>
+      <div class="meta">
+      <p class="book-details-card__meta book-author"><strong>Author:</strong> </p>
+      <p class="book-details-card__meta book-category"><strong>Category:</strong> </p>
+      <p class="book-details-card__meta book-year"><strong>Published Year:</strong> </p>
+      </div>
+      <div class="book-details-card__actions">
+        <button class="btn btn-primary borrow-btn" type="button">Borrow Book</button>
+        <a class="btn" href="user_books.html">Back to Books</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+<p>IS231 - Phase 1</p>
+</footer>
+<script src="../js/books.js"></script>
+<script src="../js/book_details.js"></script>
+</body>
+</html>
