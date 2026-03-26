@@ -220,6 +220,88 @@ main {
 .login-link {
   color: var(--success-color);
 }
+/* Container */
+.books-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Card */
+.book-card {
+    width: 250px;
+    border-radius: 12px;
+    background: #f5f5f5;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Cover */
+.book-cover {
+    height: 150px;
+    background: linear-gradient(to right, #cfd9df, #e2ebf0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* ========================================
+   USER BOOKS  - CARD LAYOUT
+   ======================================== */
+
+/* Content */
+.book-content {
+    padding: 15px;
+}
+
+.book-title {
+    font-weight: bold;
+}
+
+.book-author {
+    color: gray;
+    font-size: 14px;
+}
+
+/* Status */
+.status {
+    float: right;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.available {
+    color: green;
+}
+
+.borrowed {
+    color: red;
+}
+
+/* Buttons */
+.book-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.book-actions button {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.borrow-btn {
+    background: #2d6cdf;
+    color: white;
+}
+
+.details-btn {
+    background: #e0e0e0;
+}
 
 /* ========================================
    USER BOOK DETAILS - CARD LAYOUT
