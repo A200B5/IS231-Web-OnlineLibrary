@@ -23,40 +23,100 @@
 <main>
 <hr>
 
-<form>
+<form class="search-form">
 
-<table>
+<div class="search-inputs">
+<label for="author_name">Author Name:</label>
+<input type="text" id="author_name" name="author_name">
 
-<tr>
-<td><label for="author_name">Author Name:</label></td>
-<td><input type="text" id="author_name" name="author_name" required></td>
-</tr>
 
-<tr>
-<td><label for="book_title">Book Title:</label></td>
-<td><input type="text" id="book_title" name="book_title" required></td>
-</tr>
+<label for="book_title">Book Title:</label>
+<input type="text" id="book_title" name="book_title">
+</div>
 
-<tr>
-<td><label for="category">Category:</label></td>
-<td>
+<div class="search-filters">
+<label for="category">Category:</label>
 <select id="category" name="category">
+<option>Any</option>
 <option>Science</option>
 <option>Technology</option>
 <option>History</option>
 <option>Literature</option>
 </select>
-</td>
-</tr>
 
-<tr>
-<td></td>
-<td><input type="submit" value="Search"></td>
-</tr>
 
-</table>
+<label for="availability">Availability:</label>
+<select name="availability" id="availability">
+<option>Any</option>
+<option>Available</option>
+<option>Borrowed</option>
+</select>
+</div>
+
+<button type="submit" class="btn">Search</button>
 
 </form>
+<br>
+<h2>Search Results:</h2>
+
+<div class="results">
+
+  <div class="book-card">
+    <h3 class="book-title">Clean Code</h3>
+    <p class="book-author">Author: Robert C. Martin</p>
+    <p class="book-category">Category: Science</p>
+    <p class="book-status available">Available</p>
+    <button class="btn">Borrow</button>
+  </div>
+
+  <div class="book-card">
+    <h3 class="book-title">The Hobbit</h3>
+    <p class="book-author">Author: J.R.R. Tolkien</p>
+    <p class="book-category">Category: Literature</p>
+    <p class="book-status available">Available</p>
+    <button class="btn">Borrow</button>
+  </div>
+
+  <div class="book-card">
+    <h3 class="book-title">Introduction to Algorithms</h3>
+    <p class="book-author">Author: Cormen</p>
+    <p class="book-category">Category: Technology</p>
+    <p class="book-status borrowed">Borrowed</p>
+    <button class="btn btn-danger">Not Available</button>
+  </div>
+
+<div class="book-card">
+  <h3 class="book-title">Clean Code</h3>
+  <p class="book-author">Author: Robert C. Martin</p>
+  <p class="book-category">Category: Technology</p>
+  <p class="book-status available">Available</p>
+  <button class="btn btn-success">Borrow</button>
+</div>
+
+<div class="book-card">
+  <h3 class="book-title">The Pragmatic Programmer</h3>
+  <p class="book-author">Author: Andrew Hunt</p>
+  <p class="book-category">Category: Technology</p>
+  <p class="book-status borrowed">Borrowed</p>
+  <button class="btn btn-danger">Not Available</button>
+</div>
+
+<div class="book-card">
+  <h3 class="book-title">1984</h3>
+  <p class="book-author">Author: George Orwell</p>
+  <p class="book-category">Category: Literature</p>
+  <p class="book-status available">Available</p>
+  <button class="btn btn-success">Borrow</button>
+</div>
+
+
+</div>
+
+
+
+
+
+
 </main>
 
 <footer>
