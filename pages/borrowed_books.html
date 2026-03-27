@@ -11,7 +11,7 @@
 <body>
 
 <header>
-<h1>borrowed books</h1>
+<h1>Borrowed books</h1>
 
 
 <nav>
@@ -21,35 +21,38 @@
     <a href="../index.html">Logout</a>
 </nav>
 </header>
+
 <main>
-<hr>
-    
-<table border="1">
-    <tr>
-    <th>Book Title</th>
-    <th>Author</th>
-    <th>Borrow Date</th>
-    <th>Return Date</th>
-    <th>Details</th>
-    </tr>
+    <div class="borrowed-books">
 
-    <tr>
-        <td>Clean Code</td>
-        <td>Rob Martin</td>
-        <td>12/12/2025</td>
-        <td>1/1/2026</td>
-        <td><a href="user_book_details.html">View</a></td>
-    </tr>
 
-    <tr>
-        <td>Harry Potter</td>
-        <td>J.K Rowling</td>
-        <td>1/1/2026</td>
-        <td>20/1/2026</td>
-        <td><a href="user_book_details.html">View</a></td>
-    </tr>
-</table>
+ <div class="book-card">
+    <h3 class="book-title">Introduction to Algorithms</h3>
+    <p class="book-author">Author: Cormen</p>
 
+    <div class="book-dates">    
+    <p>Borrowed Date: 26/3/2026</p>
+    <p>Return Date: 28/3/2026</p>
+    </div>
+
+    <button class="btn btn-success">Return Now</button>
+  </div>
+
+
+  <div class="book-card">
+  <h3 class="book-title">The Pragmatic Programmer</h3>
+  <p class="book-author">Author: Andrew Hunt</p>
+
+  <div class="book book-dates">
+  <p>Borrowed Date: 27/3/2026</p>
+  <p>Return Date: 29/3/2026</p>
+  </div>
+
+  <button class="btn btn-success">Return Now</button>
+</div>
+
+
+</div>
 </main>
 
 <footer>
