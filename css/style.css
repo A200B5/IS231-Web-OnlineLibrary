@@ -275,7 +275,7 @@ flex-grow: 1;
 }
 .search-filters select {
     flex: 1;
-    min-width: 150px;
+    min-width: 160px;
 }
 /* ========================================
    USER BOOKS  - CARD LAYOUT
