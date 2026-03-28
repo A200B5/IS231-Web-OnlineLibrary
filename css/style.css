@@ -264,13 +264,18 @@ gap: 10px;
   display: flex;
 flex-direction: row;
 padding: 20px;
-gap: 30px;
+gap: 20px;
+flex-grow: 1;
 }
 .results , .borrowed-books{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   padding: 20px;
+}
+.search-filters select {
+    flex: 1;
+    min-width: 150px;
 }
 /* ========================================
    USER BOOKS  - CARD LAYOUT

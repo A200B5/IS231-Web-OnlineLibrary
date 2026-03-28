@@ -38,10 +38,12 @@
 <label for="category">Category:</label>
 <select id="category" name="category">
 <option>Any</option>
-<option>Science</option>
-<option>Technology</option>
-<option>History</option>
-<option>Literature</option>
+<option>Programming</option>
+<option>Finance</option>
+<option>Fiction</option>
+<option>Business</option>
+<option>Self Development</option>
+<option>Productivity</option>
 </select>
 
 
@@ -59,69 +61,14 @@
 <br>
 <h2>Search Results:</h2>
 
-<div class="results">
-
-  <div class="book-card">
-    <h3 class="book-title">Clean Code</h3>
-    <p class="book-author">Author: Robert C. Martin</p>
-    <p class="book-category">Category: Science</p>
-    <p class="book-status available">Available</p>
-    <button class="btn btn-success">Borrow</button>
-  </div>
-
-  <div class="book-card">
-    <h3 class="book-title">The Hobbit</h3>
-    <p class="book-author">Author: J.R.R. Tolkien</p>
-    <p class="book-category">Category: Literature</p>
-    <p class="book-status available">Available</p>
-    <button class="btn btn-success">Borrow</button>
-  </div>
-
-  <div class="book-card">
-    <h3 class="book-title">Introduction to Algorithms</h3>
-    <p class="book-author">Author: Cormen</p>
-    <p class="book-category">Category: Technology</p>
-    <p class="book-status borrowed">Borrowed</p>
-    <button class="btn btn-danger">Not Available</button>
-  </div>
-
-<div class="book-card">
-  <h3 class="book-title">Clean Code</h3>
-  <p class="book-author">Author: Robert C. Martin</p>
-  <p class="book-category">Category: Technology</p>
-  <p class="book-status available">Available</p>
-  <button class="btn btn-success">Borrow</button>
-</div>
-
-<div class="book-card">
-  <h3 class="book-title">The Pragmatic Programmer</h3>
-  <p class="book-author">Author: Andrew Hunt</p>
-  <p class="book-category">Category: Technology</p>
-  <p class="book-status borrowed">Borrowed</p>
-  <button class="btn btn-danger">Not Available</button>
-</div>
-
-<div class="book-card">
-  <h3 class="book-title">1984</h3>
-  <p class="book-author">Author: George Orwell</p>
-  <p class="book-category">Category: Literature</p>
-  <p class="book-status available">Available</p>
-  <button class="btn btn-success">Borrow</button>
-</div>
-
-
-</div>
-
-
-
-
-
+<div class="results" id="resultsContainer"></div>
 
 </main>
 
 <footer>
 <p>IS231 - Phase 1</p>
 </footer>
-
+<script src="../js/books.js"></script>
+<script src="../js/search.js"></script>
 </body>
 </html>
