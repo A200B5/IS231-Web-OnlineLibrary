@@ -234,7 +234,6 @@ main {
     background: #f5f5f5;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    padding: 15px;
 }
 
 /* Cover */
@@ -263,7 +262,7 @@ gap: 10px;
 .search-filters{
   display: flex;
 flex-direction: row;
-padding: 20px;
+padding: 30px 0px;
 gap: 20px;
 flex-grow: 1;
 }

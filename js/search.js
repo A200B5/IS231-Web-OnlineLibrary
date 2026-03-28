@@ -40,18 +40,43 @@ function displayBooks(books) {
 
     books.forEach(book => {
 
+        const statusText = book.available ? "Available" : "Out of Stock";
         const statusClass = book.available ? "available" : "borrowed";
-        const statusText = book.available ? "Available" : "Borrowed";
         const btnText = book.available ? "Borrow" : "Not Available";
         const btnClass = book.available ? "btn-success" : "btn-danger";
+        
+
+let borrowButton = book.available
+    ? `<button class="borrow-btn" onclick="borrowBook(${book.id})">Borrow</button>`
+    : `<button disabled>Unavailable</button>`;
 
         const card = `
-            <div class="book-card">
-                <h3>${book.title}</h3>
-                <p>Author: ${book.author}</p>
-                <p>Category: ${book.category}</p>
-                <p class="book-status ${statusClass}">${statusText}</p>
-                ${book.available ? `<button class="btn ${btnClass}" onclick="borrowBook(${book.id})">Borrow</button>` : `<button class="btn ${btnClass}" disabled>Not Available</button>`}
+           <div class="book-card">
+
+                <div class="book-cover">
+                    <img src="${book.image}" style="width:100%; height:100%; object-fit:cover;">
+                </div>
+
+                <div class="book-content">
+                    <div class="book-title">${book.title}</div>
+                    <div class="book-author">${book.author}</div>
+
+                    <div>
+                        📅 ${book.year}
+                        <span class="status ${statusClass}">
+                            ${statusText}
+                        </span>
+                    </div>
+
+                    <div class="book-actions">
+                        ${borrowButton}
+
+                        <button class="details-btn" onclick="goToDetails(${book.id})">
+                            Details
+                        </button>
+                    </div>
+                </div>
+
             </div>
         `;
 
