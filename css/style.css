@@ -248,7 +248,7 @@ main {
 
 /*
 ========================================
-   Search BOOKS Content
+   Search BOOKS / borrowed BOOKS Content
 ======================================== */
 .search-form{
 display: flex;
@@ -275,6 +275,11 @@ flex-grow: 1;
 .search-filters select {
     flex: 1;
     min-width: 160px;
+}
+.borrowed-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 /* ========================================
    USER BOOKS  - CARD LAYOUT
