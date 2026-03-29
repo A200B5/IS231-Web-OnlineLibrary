@@ -1,43 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
-    <title>Admin - Book Details</title>
+    <title>Book Details - Online Library</title>
 </head>
 
-<body>  
-<header>
+<body>
+    <header>
+        <h1>Online Library</h1>
 
-<nav>
-    <a href="../index.html">Home</a> |
-    <a href="../pages/admin_add_book.html">Add Book</a> |
-    <a href="../pages/admin_books.html">View Books</a> |
-    <a href="../index.html">Logout</a>
-</nav>
+        <nav>
+            <a href="../index.html">Home</a> |
+            <a href="admin_books.html">Manage Books</a> |
+            <a href="../index.html">Logout</a>
+        </nav>
 
-</header>
+    </header>
 
-<main>
-<img src="https://pubengine.s3.eu-central-1.amazonaws.com/cover/99.150005/9780135398548.jpg" 
-align="left" width="200">
 
-<h2>Clean Code</h2>
-<p><b>Author:</b> Robert C. Martin</p>
-<p><b>Category:</b> Programming</p>
-<p><b>Published Year:</b> 2008</p>
-<p><b>Available Copies:</b> 5</p>
-<p><b>Borrowed Copies:</b> 2</p>
-<p><b>Status:</b> Available</p>
-<button type="button">Delete Book</button>
-<a href="admin_edit_book.html">Edit Book</a>
-<br><br>
-<a href="admin_books.html">Back to Books</a>
-</main>
+    <main>
+        <section class="book-details-card">
+            <div class="book-details-card__cover">
+                <img class="book-image" src="" alt="book cover">
+            </div>
 
-<footer>
-<p>IS231 - Phase 1</p>
-</footer>
+            <div class="book-details-card__content">
+                <div class="book-details-card__header">
+                    <h2 class="book-details-card__title"></h2>
+                    <span class="status-badge "></span>
+                </div>
+                <div class="meta">
+                    <p class="book-details-card__meta book-author"></p>
+                    <p class="book-details-card__meta book-category"></p>
+                    <p class="book-details-card__meta book-year"></p>
+                    <p class="book-details-card__meta book-copies"></p>
+                </div>
+                <div class="book-details-card__actions">
+                    <a class="btn" href="admin_books.html">Back to Books</a>
+                    <a class="btn edit">Edit Book</a>
+                    <button class="delete-btn" type="button">Delete Book</button>
+                </div>
+            </div>
+        </section>
+    </main>
 
+    <footer>
+        <p>IS231 - Phase 1</p>
+    </footer>
+    <script src="../js/book_admin.js"></script>
+    <script src="../js/book_admin_details.js"></script>
 </body>
+
 </html>

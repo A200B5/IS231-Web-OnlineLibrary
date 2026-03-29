@@ -11,7 +11,7 @@
 <body>
 
 <header>
-<h1>borrowed books</h1>
+<h1>Borrowed books</h1>
 
 
 <nav>
@@ -21,40 +21,20 @@
     <a href="../index.html">Logout</a>
 </nav>
 </header>
+
 <main>
-<hr>
-    
-<table border="1">
-    <tr>
-    <th>Book Title</th>
-    <th>Author</th>
-    <th>Borrow Date</th>
-    <th>Return Date</th>
-    <th>Details</th>
-    </tr>
+    <h2>My Books</h2>
+    <div class="borrowed-header"><a href="user_books.html" class="btn browse-btn">Browse Books</a></div>
+    <div class="borrowed-books" id="borrowedContainer"></div>
 
-    <tr>
-        <td>Dirty Code</td>
-        <td>Rob Martin</td>
-        <td>12/12/2025</td>
-        <td>1/1/2026</td>
-        <td><a href="user_book_details.html">View</a></td>
-    </tr>
 
-    <tr>
-        <td>Harry Potter</td>
-        <td>J.K Rowling</td>
-        <td>1/1/2026</td>
-        <td>20/1/2026</td>
-        <td><a href="user_book_details.html">View</a></td>
-    </tr>
-</table>
-
+</div>
 </main>
 
 <footer>
 <p>IS231 - Phase 1</p>
 </footer>
-
+<script src="../js/books.js"></script>
+<script src="../js/borrow.js"></script>
 </body>
 </html>
