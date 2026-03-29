@@ -246,6 +246,41 @@ main {
     font-weight: bold;
 }
 
+/*
+========================================
+   Search BOOKS / borrowed BOOKS Content
+======================================== */
+.search-form{
+display: flex;
+flex-direction: column;
+}
+.search-inputs{
+display: flex;
+flex-direction: row;
+gap: 10px;
+}
+.search-filters{
+  display: flex;
+flex-direction: row;
+padding: 30px 0px;
+gap: 20px;
+flex-grow: 1;
+}
+.results , .borrowed-books{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+.search-filters select {
+    flex: 1;
+    min-width: 160px;
+}
+.borrowed-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
 /* ========================================
    USER BOOKS  - CARD LAYOUT
    ======================================== */
@@ -262,6 +297,21 @@ main {
 .book-author {
     color: gray;
     font-size: 14px;
+}
+
+.book-dates {
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.book-dates span {
+  display: block;
 }
 
 /* Status */
