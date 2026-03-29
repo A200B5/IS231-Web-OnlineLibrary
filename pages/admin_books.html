@@ -5,61 +5,37 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/style.css">
     <title>Admin - Manage Books</title>
-    
 </head>
 
 <body>
-<header>
-<h1>Manage Books</h1>
+    <header>
+        <h1>Online Library</h1>
 
-<nav>
-    <a href="../index.html">Home</a> |
-    <a href="../pages/admin_add_book.html">Add Book</a> |
-    <a href="../pages/admin_books.html">View Books</a> |
-    <a href="../index.html">Logout</a>
-</nav>
-</header>
+        <nav>
+            <a href="../index.html">Home</a> |
+            <a href="../pages/admin_add_book.html">Add Book</a>|
+            <a href="../index.html">Logout</a>
+        </nav>
 
-<main>
-    <br>
-    <a href="admin_add_book.html">Add Book</a>
-    <hr>
+    </header>
 
-<table border="1">
-   <thead>
-    <tr>
-      <th>ID</th>
-      <th>Title</th>
-      <th>Author</th>
-      <th>Category</th>
-      <th>Available Copies</th>
-      <th>Borrowed Copies</th>
-      <th>Status</th>
-      <th>Action</th>
-    </tr>
-   </thead> 
+    <main>
 
-   <tbody>
-    <tr align="center">
-      <td>1</td>
-      <td>Clean Code</td>
-      <td>Robert Martin</td>
-      <td>Programming</td>
-      <td>5</td>
-      <td>2</td>
-      <td>Available</td>
-      <td>
-       <a href="admin_book_details.html">View</a>
-      </td>
-    </tr>
-   </tbody>
 
-</table>
-</main>
 
-<footer>
-<p>IS231 - Phase 1</p>
-</footer>
+        <h2>Manage Books</h2>
 
+        <div class="books-container" id="booksContainer">
+            <!-- JS will insert cards -->
+        </div>
+
+    </main>
+
+    <footer>
+        <p>IS231 - Phase 1</p>
+    </footer>
+
+    <script src="../js/book_admin.js"></script>
 </body>
+
 </html>
