@@ -21,8 +21,8 @@ form.addEventListener("submit", function (e) {
 
         let matchAvailability =
             availability === "Any" ||
-            (availability === "Available" && book.available) ||
-            (availability === "Borrowed" && !book.available);
+            (availability === "Available" && !book.isBorrowed && book.copies > 0) ||
+            (availability === "Borrowed" && book.isBorrowed);
 
         return matchTitle && matchAuthor && matchCategory && matchAvailability;
     });
@@ -40,15 +40,23 @@ function displayBooks(books) {
 
     books.forEach(book => {
 
-        const statusText = book.available ? "Available" : "Out of Stock";
-        const statusClass = book.available ? "available" : "borrowed";
-        const btnText = book.available ? "Borrow" : "Not Available";
-        const btnClass = book.available ? "btn-success" : "btn-danger";
-        
+        let statusText = "";
+        let statusClass = "";
+        let borrowButton = "";
 
-let borrowButton = book.available
-    ? `<button class="borrow-btn" onclick="borrowBook(${book.id})">Borrow</button>`
-    : `<button disabled>Unavailable</button>`;
+        if (book.isBorrowed) {
+            statusText = "Borrowed";
+            statusClass = "borrowed";
+            borrowButton = `<button class="unborrow-btn" onclick="unborrowBookInSearch(${book.id})">Unborrow</button>`;
+        } else if (book.copies === 0) {
+            statusText = "Out of Stock";
+            statusClass = "out-of-stock";
+            borrowButton = `<button disabled>Unavailable</button>`;
+        } else {
+            statusText = "Available";
+            statusClass = "available";
+            borrowButton = `<button class="borrow-btn" onclick="borrowBookInSearch(${book.id})">Borrow</button>`;
+        }
 
         const card = `
            <div class="book-card">
@@ -83,15 +91,45 @@ let borrowButton = book.available
         resultsContainer.innerHTML += card;
     });
 }
-function borrowBook(id) {
+function borrowBookInSearch(id) {
     const books = getBooks();
+    let book = null;
 
-    const book = books.find(b => b.id === id);
+    for (let i = 0; i < books.length; i++) {
+        if (books[i].id === id) {
+            book = books[i];
+            break;
+        }
+    }
 
-    if (book && book.available) {
-        book.available = false;
+    if (book && !book.isBorrowed) {
+
+        if (book.copies > 0) {
+            book.isBorrowed = true;
+            book.copies = book.copies - 1;
+            saveBooks(books);
+            document.querySelector(".search-form").dispatchEvent(new Event("submit", { cancelable: true }));
+        }
+    }
+
+}
+
+function unborrowBookInSearch(id) {
+    const books = getBooks();
+    let book = null;
+
+    for (let i = 0; i < books.length; i++) {
+        if (books[i].id === id) {
+            book = books[i];
+            break;
+        }
+    }
+
+    if (book && book.isBorrowed) {
+
+        book.isBorrowed = false;
+        book.copies = book.copies + 1;
         saveBooks(books);
-
-        document.querySelector(".search-form").dispatchEvent(new Event("submit"));
+        document.querySelector(".search-form").dispatchEvent(new Event("submit", { cancelable: true }));
     }
 }
