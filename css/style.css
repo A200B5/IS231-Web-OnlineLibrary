@@ -12,7 +12,8 @@
   --dark-text: #2c3e50;
   --light-text: #ffffff;
   --border-color: #bdc3c7;
-  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);         /* horizontal-shadow vertical-shadow blur color */
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* horizontal-shadow vertical-shadow blur color */
   --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
   --transition: all 0.3s ease-in-out;
 }
@@ -43,7 +44,12 @@ body {
    TYPOGRAPHY
    ======================================== */
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 600;
   margin-bottom: 1rem;
   line-height: 1.2;
@@ -153,11 +159,13 @@ main {
    SIGN UP AND LOGIN CONTENT
    ======================================== */
 
-.username-email-box, .password-box {
+.username-email-box,
+.password-box {
   position: relative;
 }
 
-.username-email-box button, .password-box button {
+.username-email-box button,
+.password-box button {
   position: absolute;
   right: 12px;
   top: 50%;
@@ -167,7 +175,8 @@ main {
   cursor: pointer;
 }
 
-.username-email-box button i, .password-box button i {
+.username-email-box button i,
+.password-box button i {
   font-size: 16px;
 }
 
@@ -201,7 +210,7 @@ main {
   border-color: black;
 }
 
-.role-option input:checked + span {
+.role-option input:checked+span {
   background-color: black;
   color: white;
   border-color: black;
@@ -220,148 +229,127 @@ main {
 .login-link {
   color: var(--success-color);
 }
+
 /* Container */
 .books-container {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 /* Card */
 .book-card {
-    width: 250px;
-    border-radius: 12px;
-    background: #f5f5f5;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 250px;
+  border-radius: 12px;
+  background: #f5f5f5;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Cover */
 .book-cover {
-    height: 150px;
-    background: linear-gradient(to right, #cfd9df, #e2ebf0);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
+  height: 150px;
+  background: linear-gradient(to right, #cfd9df, #e2ebf0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
 }
 
-/*
-========================================
-   Search BOOKS / borrowed BOOKS Content
-======================================== */
-.search-form{
-display: flex;
-flex-direction: column;
-}
-.search-inputs{
-display: flex;
-flex-direction: row;
-gap: 10px;
-}
-.search-filters{
-  display: flex;
-flex-direction: row;
-padding: 30px 0px;
-gap: 20px;
-flex-grow: 1;
-}
-.results , .borrowed-books{
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  padding: 20px;
-}
-.search-filters select {
-    flex: 1;
-    min-width: 160px;
-}
-.borrowed-header {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
 /* ========================================
    USER BOOKS  - CARD LAYOUT
    ======================================== */
 
 /* Content */
 .book-content {
-    padding: 15px;
+  padding: 15px;
 }
 
 .book-title {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .book-author {
-    color: gray;
-    font-size: 14px;
-}
-
-.book-dates {
-  margin-top: 6px;
-  padding-top: 6px;
-  border-top: 1px solid #ddd;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  font-size: 0.9rem;
-  color: #444;
-}
-
-.book-dates span {
-  display: block;
+  color: gray;
+  font-size: 14px;
 }
 
 /* Status */
 .status {
-    float: right;
-    font-size: 14px;
-    font-weight: bold;
+  float: right;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 .available {
-    color: green;
+  color: green;
 }
 
 .borrowed {
-    color: red;
+  color: #FFB300;
+}
+
+.out-of-stock {
+  color: red;
 }
 
 /* Buttons */
 .book-actions {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
 }
 
 .book-actions button {
-    flex: 1;
-    padding: 8px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 .borrow-btn {
-    background: #2d6cdf;
-    color: white;
+  background: #2d6cdf;
+  color: white;
+}
+
+.unborrow-btn {
+  background: #dc2626;
+  color: white;
+}
+
+.delete-btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background-color: var(--secondary-color);
+  color: var(--light-text);
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  margin-top: 1rem;
+  background: #dc2626;
+  color: white;
 }
 
 .details-btn {
-    background: #e0e0e0;
+  background: #e0e0e0;
 }
 
 /* ========================================
    USER BOOK DETAILS - CARD LAYOUT
    ======================================== */
 
-.book-details-card{
+.book-details-card {
   display: grid;
-  grid-template-columns: 260px 1fr;
+  grid-template-columns: 180px 1fr;
   gap: 2rem;
   align-items: start;
+  width: 100%;
 
   /* card look */
   background: var(--light-text);
@@ -371,19 +359,20 @@ flex-grow: 1;
   box-shadow: var(--shadow);
 }
 
-.book-details-card__cover img{
+.book-details-card__cover img {
   width: 100%;
-  height: auto;
+  height: 300px;
   display: block;
   border-radius: 12px;
   box-shadow: var(--shadow-lg);
 }
 
-.book-details-card__content{
-  min-width: 0; /* prevents overflow */
+.book-details-card__content {
+  min-width: 0;
+  /* prevents overflow */
 }
 
-.book-details-card__header{
+.book-details-card__header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -391,20 +380,22 @@ flex-grow: 1;
   margin-bottom: 0.75rem;
 }
 
-.book-details-card__title{
-  margin: 0; /* override default h2 margin-bottom from global */
-  border: none; /* override h2 border-bottom from global */
+.book-details-card__title {
+  margin: 0;
+  /* override default h2 margin-bottom from global */
+  border: none;
+  /* override h2 border-bottom from global */
   padding: 0;
 }
 
-.book-details-card__meta{
+.book-details-card__meta {
   margin-bottom: 0.75rem;
   color: #555;
   font-size: 1.05rem;
 }
 
 /* Status badge */
-.status-badge{
+.status-badge {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -416,19 +407,25 @@ flex-grow: 1;
   white-space: nowrap;
 }
 
-.status-badge--available{
+.status-badge--available {
   color: #006417;
   background: rgba(39, 174, 96, 0.45);
   border-color: rgba(39, 174, 96, 0.25);
 }
 
-.status-badge--borrowed{
-  color: #b02a37;
-  background: rgba(231, 76, 60, 0.10);
-  border-color: rgba(231, 76, 60, 0.25);
+.status-badge--borrowed {
+  color: #b58900;
+  background: rgba(255, 193, 7, 0.15);
+  border-color: rgba(255, 193, 7, 0.35);
 }
 
-.book-details-card__actions{
+.status-badge--out {
+  color: #ffffff;
+  background: #dc2626;
+  border-color: #dc2626;
+}
+
+.book-details-card__actions {
   display: flex;
   gap: 0.75rem;
   flex-wrap: wrap;
@@ -474,7 +471,7 @@ section p {
    ======================================== */
 
 section:first-of-type {
-  background: linear-gradient(135deg, rgba(44, 62, 80, 0.95) 0%, rgba(52, 152, 219, 0.95) 100%);            
+  background: linear-gradient(135deg, rgba(44, 62, 80, 0.95) 0%, rgba(52, 152, 219, 0.95) 100%);
   color: var(--light-text);
   min-height: 300px;
   display: flex;
@@ -510,7 +507,8 @@ hr {
    LISTS
    ======================================== */
 
-ul, ol {
+ul,
+ol {
   margin-left: 2rem;
   margin-bottom: 1.5rem;
 }
@@ -556,7 +554,8 @@ footer p {
    BUTTONS & LINKS
    ======================================== */
 
-.btn  , a.btn {
+.btn,
+a.btn {
   display: inline-block;
   padding: 0.8rem 2rem;
   background-color: var(--secondary-color);
@@ -572,7 +571,8 @@ footer p {
   margin-top: 1rem;
 }
 
-.btn:hover  , a.btn:hover {
+.btn:hover,
+a.btn:hover {
   background-color: var(--accent-color);
   box-shadow: var(--shadow-lg);
   transform: translateY(-3px);
@@ -680,8 +680,13 @@ textarea {
   text-align: right;
 }
 
-.rounded { border-radius: 8px; }
-.shadow { box-shadow: var(--shadow); }
+.rounded {
+  border-radius: 8px;
+}
+
+.shadow {
+  box-shadow: var(--shadow);
+}
 
 /* ========================================
    RESPONSIVE DESIGN
@@ -729,27 +734,29 @@ textarea {
     padding: 1.5rem;
     margin-bottom: 1.5rem;
   }
-  
+
   form {
     padding: 1.5rem;
   }
 
-  ul, ol {
+  ul,
+  ol {
     margin-left: 1.5rem;
   }
 
   footer {
     padding: 1.5rem;
   }
-  .book-details-card{
+
+  .book-details-card {
     grid-template-columns: 1fr;
   }
 
-  .book-details-card__cover{
+  .book-details-card__cover {
     max-width: 320px;
   }
 
-  .book-details-card__header{
+  .book-details-card__header {
     flex-direction: column;
     align-items: flex-start;
   }
@@ -786,7 +793,8 @@ textarea {
     padding: 1rem;
   }
 
-  .btn, a.btn {
+  .btn,
+  a.btn {
     width: 100%;
     text-align: center;
   }
@@ -798,7 +806,8 @@ textarea {
   input[type="date"],
   textarea,
   select {
-    font-size: 16px; /* Prevents zoom on iOS */
+    font-size: 16px;
+    /* Prevents zoom on iOS */
   }
 }
 
@@ -811,6 +820,7 @@ textarea {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -822,6 +832,7 @@ textarea {
     opacity: 0;
     transform: translateX(-20px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
