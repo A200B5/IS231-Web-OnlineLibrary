@@ -3,19 +3,19 @@ const borrowedContainer = document.getElementById("borrowedContainer");
 function renderBorrowedBooks() {
     const books = getBooks();
 
-    const borrowed = books.filter(book => !book.available);
+    const borrowed = books.filter(book => book.isBorrowed);
 
     borrowedContainer.innerHTML = "";
 
     if (borrowed.length === 0) {
-    borrowedContainer.innerHTML = `
+        borrowedContainer.innerHTML = `
         <div class="empty-state">
             <h3>No borrowed books</h3>
             <p>You haven’t borrowed anything yet.</p>
         </div>
     `;
-    return;
-}
+        return;
+    }
 
     borrowed.forEach(book => {
 
@@ -65,11 +65,19 @@ function renderBorrowedBooks() {
 
 function returnBook(id) {
     const books = getBooks();
+    let book = null;
 
-    const book = books.find(b => b.id === id);
+    for (let i = 0; i < books.length; i++) {
+        if (books[i].id === id) {
+            book = books[i];
+            break;
+        }
+    }
 
-    if (book) {
-        book.available = true;
+    if (book && book.isBorrowed) {
+        
+        book.isBorrowed = false;
+        book.copies = book.copies + 1;
         saveBooks(books);
 
         renderBorrowedBooks();
