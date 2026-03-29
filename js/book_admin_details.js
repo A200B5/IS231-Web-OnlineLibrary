@@ -29,6 +29,11 @@ function goToEdit(id) {
     window.location.href = `admin_edit_book.html?id=${id}`;
 }
 
+let edt = document.querySelector(".edit");
+edt.onclick = function () {
+    goToEdit(id);
+};
+
 function deleteBook(id) {
     const books = JSON.parse(localStorage.getItem("books"));
     for (let i = 0; i < books.length; i++) {
