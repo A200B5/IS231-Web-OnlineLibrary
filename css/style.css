@@ -258,6 +258,23 @@ main {
   font-weight: bold;
 }
 
+/* =============================================
+   search.html / borrowed_books.html Content
+   ============================================= */
+
+.results , .borrowed-books{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.borrowed-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
 /* ========================================
    USER BOOKS  - CARD LAYOUT
    ======================================== */
