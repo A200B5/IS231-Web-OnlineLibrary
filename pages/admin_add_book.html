@@ -13,7 +13,6 @@
 
         <nav>
             <a href="../index.html">Home</a> |
-            <a href="../pages/admin_add_book.html">Add Book</a> |
             <a href="../pages/admin_books.html">View Books</a> |
             <a href="../index.html">Logout</a>
         </nav>
@@ -62,28 +61,26 @@
             </select><br><br>
 
             <label for="image">Cover URL</label>
-            <input type="url" id="copies" name="copies" required><br><br>
-
+            <input type="url" id="image" name="image" required><br><br>
             <label for="copies">Available Copies</label>
-            <input type="number" id="copies" name="copies" required><br><br>
-
-            <input class="btn" type="submit" value="Save Changes"><br>
+            <input type="number" id="copies" name="copies" required min="1"><br><br>
+            <input class="btn" type="submit" value="Add Book"><br>
         </form>
     </main>
 
     <footer>
-            <form action="https://formsubmit.co/be136af79a36ee1f98093677271e4c0c" method="POST">
-                <div>
-                    <h2>Get in Touch</h2>
-                </div>
-                <div class="form-row">
-                    <input class="contact" type="text" name="name" placeholder="Your Name" required>
-                    <input class="contact" type="email" name="email" placeholder="Your Email" required>
-                </div>
-                <textarea class="contact" name="massege" placeholder="Your Massege"></textarea><br><br>
-                <button class="btn" type="submit">Submit</button>
-                <button class="btn" type="reset">Reset</button>
-            </form>
+        <form action="https://formsubmit.co/be136af79a36ee1f98093677271e4c0c" method="POST">
+            <div>
+                <h2>Get in Touch</h2>
+            </div>
+            <div class="form-row">
+                <input class="contact" type="text" name="name" placeholder="Your Name" required>
+                <input class="contact" type="email" name="email" placeholder="Your Email" required>
+            </div>
+            <textarea class="contact" name="massege" placeholder="Your Massege"></textarea><br><br>
+            <button class="btn" type="submit">Submit</button>
+            <button class="btn" type="reset">Reset</button>
+        </form>
 
         <p>Copyright @ 2026 All Rights</p>
     </footer>
