@@ -36,6 +36,7 @@
             <label for="category">Category</label>
             <select id="category" name="category" required>
                 <option>Biography</option>
+                <option value="Programming">Programming</option>
                 <option value="History">History</option>
                 <option value="Science & Technology">Science & Technology</option>
                 <option value="Self-Help">Self-Help</option>
@@ -61,10 +62,8 @@
 
             <label for="image">Cover URL</label>
             <input type="url" id="image" name="image" required><br><br>
-
             <label for="copies">Available Copies</label>
-            <input type="number" id="copies" name="copies" required><br><br>
-
+            <input type="number" id="copies" name="copies" required min="1"><br><br>
             <input class="btn" type="submit" value="Save Changes"><br>
         </form>
     </main>
