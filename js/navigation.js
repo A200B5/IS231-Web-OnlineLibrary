@@ -22,7 +22,7 @@ function getData() {
 }
 
 function goToDetails(id) {
-    window.location.href = `admin_books_details.html?id=${id}`;
+    window.location.href = `admin_book_details.html?id=${id}`;
 }
 
 
