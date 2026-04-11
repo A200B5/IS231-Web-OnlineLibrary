@@ -5,6 +5,11 @@ let books = JSON.parse(localStorage.getItem("books")) || [];
 
 let book = books.find(b => b.id == id);
 
+if (!book) {
+    document.querySelector("main").innerHTML = "<p style='padding:2rem'>Book not found. <a href='user_books.html'>Go back to books</a></p>";
+    throw new Error("Book not found");
+}
+
 document.querySelector(".book-details-card__title").textContent = book.title;
 document.querySelector(".book-author").innerHTML = `<strong>Author:</strong> ${book.author}`;
 document.querySelector(".book-category").innerHTML = `<strong>Category:</strong> ${book.category}`;

@@ -24,8 +24,19 @@ if (signupForm) {
             return;
         }
 
+        const users = JSON.parse(localStorage.getItem("users") || "[]");
+
+        const alreadyExists = users.find(
+            u => u.username === username || u.email === email
+        );
+        if (alreadyExists) {
+            alert("Username or email already registered!");
+            return;
+        }
+
         const user = { username, email, password, role };
-        localStorage.setItem("user", JSON.stringify(user));
+        users.push(user);
+        localStorage.setItem("users", JSON.stringify(users));
 
         alert("Signup successful!");
         window.location.href = "login.html";
@@ -44,18 +55,20 @@ if (loginForm) {
         const password = loginForm.querySelector("#password").value;
 
         // Get saved user
-        const savedUser = JSON.parse(localStorage.getItem("user"));
+        // Get all users
+        const users = JSON.parse(localStorage.getItem("users") || "[]");
 
-        // No user found
-        if (!savedUser) {
+        if (users.length === 0) {
             alert("No account found! Please sign up first.");
             return;
         }
 
-        // Check username or email
-        const isValidUser =
-            input === savedUser.username ||
-            input === savedUser.email;
+        // Find matching user
+        const savedUser = users.find(
+            u => (u.username === input || u.email === input) && u.password === password
+        );
+
+        const isValidUser = !!savedUser;
 
         // Final check
         if (isValidUser && password === savedUser.password) {
@@ -63,10 +76,15 @@ if (loginForm) {
 
             // Save logged-in user
             localStorage.setItem("loggedInUser", savedUser.username);
+            localStorage.setItem("loggedInRole", savedUser.role);
 
-        } 
+            if (savedUser.role === "admin") {
+                window.location.href = "../pages/admin_books.html";
+            } else {
+                window.location.href = "../pages/user_books.html";
+            }
 
-        else {
+        } else {
             alert("Invalid email/username or password!");
         }
     });

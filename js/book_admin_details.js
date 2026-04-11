@@ -5,6 +5,12 @@ const books = JSON.parse(localStorage.getItem("books")) || [];
 
 const book = books.find(b => b.id == id);
 
+if (!book) {
+    document.querySelector("main").innerHTML = "<p>Book not found. <a href='admin_books.html'>Go back</a></p>";
+    // stop the rest of the script
+    throw new Error("Book not found");
+}
+
 document.querySelector(".book-details-card__title").textContent = book.title;
 document.querySelector(".book-author").innerHTML = `<strong>Author:</strong> ${book.author}`;
 document.querySelector(".book-category").innerHTML = `<strong>Category:</strong> ${book.category}`;
@@ -13,6 +19,7 @@ document.querySelector(".book-copies").innerHTML = `<strong>Available Copies:</s
 
 const img = document.querySelector(".book-image");
 img.src = book.image;
+img.alt = book.title;
 
 const status = document.querySelector(".status-badge");
 

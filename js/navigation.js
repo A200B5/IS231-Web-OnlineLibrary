@@ -1,24 +1,7 @@
-const BOOKS_STORAGE_KEY = "books";
 const currentYear = new Date().getFullYear();
 
-function safeLoadBooks() {
-    const raw = localStorage.getItem(BOOKS_STORAGE_KEY);
-    if (!raw) return null;
-    try {
-        const data = JSON.parse(raw);
-        return Array.isArray(data) ? data : null;
-    } catch {
-        return null;
-    }
-}
-
-if (!safeLoadBooks()) {
-    localStorage.setItem(BOOKS_STORAGE_KEY, JSON.stringify([]));
-}
-
 function getData() {
-    let storedData = localStorage.getItem(BOOKS_STORAGE_KEY);
-    return storedData ? JSON.parse(storedData) : [];
+    return getBooks();
 }
 
 function goToDetails(id) {
