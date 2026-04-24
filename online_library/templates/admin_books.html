@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../css/style.css">
+  <title>Admin - Manage Books</title>
+</head>
+
+<body>
+  <header>
+    <h1>Online Library</h1>
+
+    <nav>
+      <a href="../index.html">Home</a> |
+      <a href="../pages/admin_add_book.html">Add Book</a>|
+      <a href="../index.html">Logout</a>
+    </nav>
+
+  </header>
+
+  <main>
+
+
+
+    <h2>Manage Books</h2>
+
+    <div class="books-container" id="booksContainer">
+      <!-- JS will insert cards -->
+    </div>
+
+  </main>
+
+  <footer>
+    <form action="https://formsubmit.co/be136af79a36ee1f98093677271e4c0c" method="POST">
+      <div>
+        <h2>Get in Touch</h2>
+      </div>
+      <div class="form-row">
+        <input class="contact" type="text" name="name" placeholder="Your Name" required>
+        <input class="contact" type="email" name="email" placeholder="Your Email" required>
+      </div>
+      <textarea class="contact" name="massege" placeholder="Your Massege"></textarea><br><br>
+      <button class="btn" type="submit">Submit</button>
+      <button class="btn" type="reset">Reset</button>
+    </form>
+
+    <p>Copyright @ 2026 All Rights</p>
+  </footer>
+
+  <script src="../js/store.js"></script>
+<script>requireAdmin();</script>
+<script src="../js/book_admin.js"></script>
+</body>
+
+</html>
