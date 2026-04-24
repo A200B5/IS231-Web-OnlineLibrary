@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Book Details - Online Library</title>
+</head>
+
+<body>
+    <header>
+        <h1>Online Library</h1>
+
+        <nav>
+            <a href="../index.html">Home</a> |
+            <a href="admin_books.html">Manage Books</a> |
+            <a href="../index.html">Logout</a>
+        </nav>
+
+    </header>
+
+
+    <main>
+        <section class="book-details-card">
+            <div class="book-details-card__cover">
+                <img class="book-image" src="" alt="book cover">
+            </div>
+
+            <div class="book-details-card__content">
+                <div class="book-details-card__header">
+                    <h2 class="book-details-card__title"></h2>
+                    <span class="status-badge "></span>
+                </div>
+                <div class="meta">
+                    <p class="book-details-card__meta book-author"></p>
+                    <p class="book-details-card__meta book-category"></p>
+                    <p class="book-details-card__meta book-year"></p>
+                    <p class="book-details-card__meta book-copies"></p>
+                </div>
+                <div class="book-details-card__actions">
+                    <a class="btn" href="admin_books.html">Back to Books</a>
+                    <a class="btn edit">Edit Book</a>
+                    <button class="delete-btn" type="button">Delete Book</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+<footer>
+    <form action="https://formsubmit.co/be136af79a36ee1f98093677271e4c0c" method="POST">
+        <div>
+            <h2>Get in Touch</h2>
+        </div>
+        <div class="form-row">
+            <input class="contact" type="text" name="name" placeholder="Your Name" required>
+            <input class="contact" type="email" name="email" placeholder="Your Email" required>
+        </div>
+        <textarea class="contact" name="massege" placeholder="Your Massege"></textarea><br><br>
+        <button class="btn" type="submit">Submit</button>
+        <button class="btn" type="reset">Reset</button>
+    </form>
+
+    <p>Copyright @ 2026 All Rights</p>
+</footer>
+    <script src="../js/store.js"></script>
+<script>requireAdmin();</script>
+<script src="../js/book_admin.js"></script>
+<script src="../js/book_admin_details.js"></script>
+</body>
+
+</html>

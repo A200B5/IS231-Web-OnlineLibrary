@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>sign up</title>
+
+</head>
+
+<body class="signup-page">
+    <header>
+
+        <h1>Sign Up</h1>
+
+        <nav>
+            <a href="../index.html">Home</a> |
+            <a href="../pages/login.html">Login</a> |
+            <a href="../pages/signup.html">Sign Up</a>
+        </nav>
+
+    </header>
+    <main>
+        <hr>
+        <form action="login.html" id="signupForm">
+
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="username" required>
+            <br><br>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="example@email.com" required>
+            <br><br>
+
+            <label for="password">Password</label>
+            <div class="password-box">
+                <input type="password" id="password" placeholder="********" required>
+                <button type="button" class="toggle-password">
+                    <i class="fa-regular fa-eye-slash"></i>
+                </button>
+            </div>
+            <br>
+
+            <label for="confirmPassword">Confirm Password</label>
+            <div class="password-box">
+                <input type="password" id="confirmPassword" placeholder="********" required>
+                <button type="button" class="toggle-password">
+                    <i class="fa-regular fa-eye-slash"></i>
+                </button>
+            </div>
+
+            <div class="user-type">
+                <label>User Type</label>
+
+                <div class="roles">
+                    <label class="role-option">
+                        <input type="radio" name="role" value="admin" required>
+                        <span>Admin</span>
+                    </label>
+
+                    <label class="role-option">
+                        <input type="radio" name="role" value="user">
+                        <span>User</span>
+                    </label>
+                </div>
+            </div>
+
+            <input class="btn" type="submit" value="Sign Up">
+
+            <p>Already have an account? <a href="login.html">Login</a></p>
+
+        </form>
+
+    </main>
+    <footer>
+        <form action="https://formsubmit.co/be136af79a36ee1f98093677271e4c0c" method="POST">
+            <div>
+                <h2>Get in Touch</h2>
+            </div>
+            <div class="form-row">
+                <input class="contact" type="text" name="name" placeholder="Your Name" required>
+                <input class="contact" type="email" name="email" placeholder="Your Email" required>
+            </div>
+            <textarea class="contact" name="massege" placeholder="Your Massege"></textarea><br><br>
+            <button class="btn" type="submit">Submit</button>
+            <button class="btn" type="reset">Reset</button>
+        </form>
+
+        <p>Copyright @ 2026 All Rights</p>
+    </footer>
+
+    <script src="../js/auth.js"></script>
+</body>
+
+</html>
