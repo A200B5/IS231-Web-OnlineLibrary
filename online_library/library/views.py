@@ -18,7 +18,7 @@ def signup_view(request):
         email = request.POST.get('email')
         password = request.POST.get('password')
         confirm_password = request.POST.get('confirm_password')
-        role = request.POST.get('role')
+        role = 'user'
 
         # username exists
         if User.objects.filter(username=username).exists():
@@ -117,5 +117,7 @@ def logout_view(request):
     logout(request)
     return redirect('login')
 
+from django.contrib.auth.decorators import login_required
+@login_required
 def user_books(request):
     return render(request, 'user_books.html')
