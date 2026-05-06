@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <title>sign up</title>
 
@@ -16,27 +17,42 @@
         <h1>Sign Up</h1>
 
         <nav>
-            <a href="../index.html">Home</a> |
-            <a href="../pages/login.html">Login</a> |
-            <a href="../pages/signup.html">Sign Up</a>
+            <a href="{% url 'home' %}">Home</a> |
+            <a href="{% url 'login' %}">Login</a> |
+            <a href="{% url 'signup' %}">Sign Up</a>
         </nav>
 
     </header>
     <main>
         <hr>
-        <form action="login.html" id="signupForm">
+
+        {% if messages %}
+
+            {% for message in messages %}
+
+                <script>
+                    alert("{{ message }}");
+                </script>
+
+            {% endfor %}
+
+        {% endif %}
+
+        <form method="POST" id="signupForm">
+
+            {% csrf_token %}
 
             <label for="username">Username</label>
-            <input type="text" id="username" placeholder="username" required>
+            <input type="text" id="username" placeholder="username" name="username" required>
             <br><br>
 
             <label for="email">Email</label>
-            <input type="email" id="email" placeholder="example@email.com" required>
+            <input type="email" id="email" placeholder="example@email.com" name="email" required>
             <br><br>
 
             <label for="password">Password</label>
             <div class="password-box">
-                <input type="password" id="password" placeholder="********" required>
+                <input type="password" id="password" placeholder="********" name="password" required>
                 <button type="button" class="toggle-password">
                     <i class="fa-regular fa-eye-slash"></i>
                 </button>
@@ -45,7 +61,7 @@
 
             <label for="confirmPassword">Confirm Password</label>
             <div class="password-box">
-                <input type="password" id="confirmPassword" placeholder="********" required>
+                <input type="password" id="confirmPassword" placeholder="********" name="confirm_password" required>
                 <button type="button" class="toggle-password">
                     <i class="fa-regular fa-eye-slash"></i>
                 </button>
@@ -69,7 +85,7 @@
 
             <input class="btn" type="submit" value="Sign Up">
 
-            <p>Already have an account? <a href="login.html">Login</a></p>
+            <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
 
         </form>
 
@@ -87,11 +103,11 @@
             <button class="btn" type="submit">Submit</button>
             <button class="btn" type="reset">Reset</button>
         </form>
-
+        
         <p>Copyright @ 2026 All Rights</p>
     </footer>
 
-    <script src="../js/auth.js"></script>
+    <script src="{% static 'js/auth.js' %}"></script>
 </body>
 
 </html>
