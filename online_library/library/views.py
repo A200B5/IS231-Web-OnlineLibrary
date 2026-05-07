@@ -132,7 +132,7 @@ def login_view(request):
         if user is not None:
             login(request, user)
             messages.success(request, "Login Successful!")
-            return redirect('user_books')
+            return redirect('books')
 
         else:
             messages.error(
@@ -147,3 +147,36 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return redirect('login')
+
+def admin_books(request):
+    books = Book.objects.all()
+    return render(request, 'admin_books.html', {'books': books})
+
+
+def admin_book_details(request, id):
+    book = get_object_or_404(Book, id=id)
+    return render(request, 'admin_book_details.html', {'book': book})
+
+
+def increase_copies(request, id):
+    book = get_object_or_404(Book, id=id)
+    book.copies += 1
+    book.save()
+    return redirect('admin_books')
+
+
+def decrease_copies(request, id):
+    book = get_object_or_404(Book, id=id)
+    if book.copies > 0:
+        book.copies -= 1
+        book.save()
+    return redirect('admin_books')
+
+
+def delete_book(request, id):
+    book = get_object_or_404(Book, id=id)
+    if request.method == 'POST':
+        book.delete()
+    return redirect('admin_books')
+
+

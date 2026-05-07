@@ -1,51 +1,74 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
     <title>Book Details - Online Library</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 
 <body>
-    <header>
-        <h1>Online Library</h1>
 
-        <nav>
-            <a href="../index.html">Home</a> |
-            <a href="admin_books.html">Manage Books</a> |
-            <a href="../index.html">Logout</a>
-        </nav>
+<header>
+    <h1>Online Library</h1>
+    <nav>
+        <a href="{% url 'home' %}">Home</a> |
+        <a href="{% url 'admin_books' %}">Manage Books</a> |
+        <a href="{% url 'home' %}">Logout</a>
+    </nav>
+</header>
 
-    </header>
 
+<main>
+    <section class="book-details-card">
 
-    <main>
-        <section class="book-details-card">
-            <div class="book-details-card__cover">
-                <img class="book-image" src="" alt="book cover">
+        <div class="book-details-card__cover">
+            <img class="book-image" src="{{ book.image }}" alt="{{ book.title }}">
+        </div>
+        <div class="book-details-card__content">
+
+            <div class="book-details-card__header">
+                <h2 class="book-details-card__title">{{ book.title }}</h2>
+
+                <span class="status-badge {% if book.copies > 0 %}available{% else %}out-of-stock{% endif %}">
+                    {% if book.copies > 0 %}Available{% else %}Out of Stock{% endif %}
+                </span>
             </div>
 
-            <div class="book-details-card__content">
-                <div class="book-details-card__header">
-                    <h2 class="book-details-card__title"></h2>
-                    <span class="status-badge "></span>
-                </div>
-                <div class="meta">
-                    <p class="book-details-card__meta book-author"></p>
-                    <p class="book-details-card__meta book-category"></p>
-                    <p class="book-details-card__meta book-year"></p>
-                    <p class="book-details-card__meta book-copies"></p>
-                </div>
-                <div class="book-details-card__actions">
-                    <a class="btn" href="admin_books.html">Back to Books</a>
-                    <a class="btn edit">Edit Book</a>
-                    <button class="delete-btn" type="button">Delete Book</button>
-                </div>
+            <div class="meta">
+                <p class="book-details-card__meta">Author: {{ book.author }}</p>
+                <p class="book-details-card__meta">Category: {{ book.category }}</p>
+                <p class="book-details-card__meta">Year: {{ book.year }}</p>
+                <p class="book-details-card__meta">Copies: {{ book.copies }}</p>
             </div>
-        </section>
-    </main>
+
+            {% if book.description %}
+            <div class="book-description">
+                <p>{{ book.description }}</p>
+            </div>
+            {% endif %}
+
+            <div class="book-details-card__actions">
+                <a class="btn" href="{% url 'admin_books' %}">Back to Books</a>
+
+                <a class="btn edit" href="{% url 'admin_edit_book' book.id %}">
+                    Edit Book
+                </a>
+
+                <form action="{% url 'delete_book' book.id %}" method="POST" class ="no-style">
+                    {% csrf_token %}
+                    <button class="delete-btn" type="submit">
+                        Delete Book
+                    </button>
+                </form>
+            </div>
+
+        </div>
+
+    </section>
+</main>
 
 <footer>
     <form action="https://formsubmit.co/be136af79a36ee1f98093677271e4c0c" method="POST">
@@ -60,13 +83,9 @@
         <button class="btn" type="submit">Submit</button>
         <button class="btn" type="reset">Reset</button>
     </form>
-
     <p>Copyright @ 2026 All Rights</p>
 </footer>
-    <script src="../js/store.js"></script>
-<script>requireAdmin();</script>
-<script src="../js/book_admin.js"></script>
-<script src="../js/book_admin_details.js"></script>
+
 </body>
 
 </html>
