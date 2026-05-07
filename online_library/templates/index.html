@@ -14,9 +14,9 @@
 <h1>Online Library</h1>
 
 <nav>
-<a href="index.html">Home</a> |
-<a href="pages/login.html">Login</a> |
-<a href="pages/signup.html">Sign Up</a>
+    <a href="{% url 'home' %}">Home</a> |
+    <a href="{% url 'login' %}">Login</a> |
+    <a href="{% url 'signup' %}">Sign Up</a>
 </nav>
 
 </header>
@@ -43,7 +43,7 @@ and borrow them easily.
 <h3>Quick Links</h3>
 
 <ul>
-<li><a href="{% url 'user_books' %}">Browse Books</a></li>
+<li><a href="{% url 'books' %}">Browse Books</a></li>
 <li><a href="{% url 'search' %}">Search Books</a></li>
 </ul>
 
@@ -61,7 +61,7 @@ and borrow them easily.
             <input class="contact" type="text" name="name" placeholder="Your Name" required>
             <input class="contact" type="email" name="email" placeholder="Your Email" required>
         </div>
-        <textarea class="contact" name="massege" placeholder="Your Massege"></textarea><br><br>
+        <textarea class="contact" name="message" placeholder="Your Message"></textarea><br><br>
         <button class="btn" type="submit">Submit</button>
         <button class="btn" type="reset">Reset</button>
     </form>
