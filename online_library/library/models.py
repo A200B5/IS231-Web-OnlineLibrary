@@ -10,7 +10,7 @@ class Book(models.Model):
     year = models.IntegerField()
     copies = models.IntegerField(default=1)
     image = models.URLField(blank=True, null=True)
-
+    description = models.TextField(blank=True, null=True)
     def __str__(self):
         return self.title
 
