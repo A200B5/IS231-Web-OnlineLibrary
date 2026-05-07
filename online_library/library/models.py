@@ -6,6 +6,7 @@ class Book(models.Model):
     title = models.CharField(max_length=200)
     author = models.CharField(max_length=200)
     category = models.CharField(max_length=100)
+    availability = models.CharField(max_length=20, default="Available")
     year = models.IntegerField()
     copies = models.IntegerField(default=1)
     image = models.URLField(blank=True, null=True)

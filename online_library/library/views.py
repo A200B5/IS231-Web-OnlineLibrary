@@ -2,13 +2,49 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from .models import Profile
+from django.contrib.auth.decorators import login_required
+from .models import Profile, Book
 import re
-
 
 def home(request):
     return render(request, 'index.html')
 
+@login_required
+def borrowed_books(request):
+    return render(request, 'borrowed_books.html')
+
+@login_required
+def user_books(request):
+    return render(request, 'user_books.html')
+
+@login_required
+def search(request):
+    title = request.GET.get('title', '')
+    author = request.GET.get('author', '')
+    category = request.GET.get('category', 'Any')
+    availability = request.GET.get('availability', 'Any')
+
+    books = Book.objects.all()
+
+    if title:
+        books = books.filter(title__icontains=title)
+
+    if author:
+        books = books.filter(author__icontains=author)
+
+    if category != 'Any':
+        books = books.filter(category=category)
+
+    if availability != 'Any':
+        books = books.filter(availability=availability)
+
+    return render(request, 'search.html', {
+        'books': books,
+        'title': title,
+        'author': author,
+        'category': category,
+        'availability': availability,
+    })
 
 def signup_view(request):
 
@@ -18,7 +54,6 @@ def signup_view(request):
         email = request.POST.get('email')
         password = request.POST.get('password')
         confirm_password = request.POST.get('confirm_password')
-        role = 'user'
 
         # username exists
         if User.objects.filter(username=username).exists():
@@ -54,12 +89,7 @@ def signup_view(request):
             password=password
         )
 
-        user.save()
-
-        Profile.objects.create(
-            user=user,
-            role=role
-        )
+        Profile.objects.create(user=user)
 
         messages.success(request, "Account created successfully!")
 
@@ -116,8 +146,3 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return redirect('login')
-
-from django.contrib.auth.decorators import login_required
-@login_required
-def user_books(request):
-    return render(request, 'user_books.html')

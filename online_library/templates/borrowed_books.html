@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title>borrowed Books</title>
 </head>
 
@@ -15,16 +16,16 @@
 
 
         <nav>
-            <a href="../index.html">Home</a> |
-            <a href="../pages/search.html">Search</a> |
-            <a href="../pages/borrowed_books.html">My Books</a> |
-            <a href="../index.html">Logout</a>
+            <a href="{% url 'home' %}">Home</a> |
+            <a href="{% url 'search' %}">Search</a> |
+            <a href="{% url 'borrowed_books' %}">My Books</a> |
+            <a href="{% url 'home' %}">Logout</a>
         </nav>
     </header>
 
     <main>
         <h2>My Books</h2>
-        <div class="borrowed-header"><a href="user_books.html" class="btn browse-btn">Browse Books</a></div>
+        <div class="borrowed-header"><a href="{% url 'user_books' %}" class="btn browse-btn">Browse Books</a></div>
         <div class="borrowed-books" id="borrowedContainer"></div>
 
         </div>
