@@ -256,8 +256,15 @@ main {
   align-items: center;
   justify-content: center;
   font-weight: bold;
+  overflow: hidden;
 }
 
+.book-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 /* =============================================
    search.html / borrowed_books.html Content
    ============================================= */
@@ -319,12 +326,26 @@ main {
   margin-top: 10px;
 }
 
+.book-actions a,
 .book-actions button {
   flex: 1;
   padding: 8px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f0f0;
+  transition: background 0.3s ease;
+}
+
+.book-actions a:hover,
+.book-actions button:hover {
+  background: #e4e4e4;
 }
 
 .borrow-btn {
@@ -357,8 +378,13 @@ main {
 
 .details-btn {
   background: #e0e0e0;
+  color: #333 !important;
+  font-size: 14px;
 }
 
+.details-btn:hover {
+  background: #d0d0d0;
+}
 /* ========================================
    USER BOOK DETAILS - CARD LAYOUT
    ======================================== */
@@ -678,6 +704,15 @@ form {
   box-shadow: var(--shadow);
   max-width: 600px;
   margin: 0 auto;
+}
+
+form.no-style {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  max-width: none;
+  margin: 0;
 }
 
 form h2 {
