@@ -30,7 +30,7 @@
         {% for message in messages %}
 
             <script>
-                alert("{{ message }}");
+                alert("{{ message|escapejs }}");
             </script>
 
         {% endfor %}

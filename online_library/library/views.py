@@ -54,7 +54,6 @@ def signup_view(request):
         email = request.POST.get('email')
         password = request.POST.get('password')
         confirm_password = request.POST.get('confirm_password')
-        role = 'user'
 
         # username exists
         if User.objects.filter(username=username).exists():
@@ -90,10 +89,7 @@ def signup_view(request):
             password=password
         )
 
-        Profile.objects.create(
-            user=user,
-            role=role
-        )
+        Profile.objects.create(user=user)
 
         messages.success(request, "Account created successfully!")
 
