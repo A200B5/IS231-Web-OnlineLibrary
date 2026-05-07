@@ -131,7 +131,7 @@ def login_view(request):
         if user is not None:
             login(request, user)
             messages.success(request, "Login Successful!")
-            return redirect('user_books')
+            return redirect('books')
 
         else:
             messages.error(
