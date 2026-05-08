@@ -215,4 +215,10 @@ def delete_book(request, id):
         book.delete()
     return redirect('admin_books')
 
+def admin_add_book(request):
+    return render(request, 'admin_add_book.html')
 
+
+def admin_edit_book(request, id):
+    book = get_object_or_404(Book, id=id)
+    return render(request, 'admin_edit_book.html', {'book': book})
