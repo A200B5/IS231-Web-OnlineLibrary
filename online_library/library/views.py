@@ -138,7 +138,7 @@ def login_view(request):
             if next_url:
                 return redirect(next_url)
 
-            return redirect('user_books')
+            return redirect('books')
 
         else:
             messages.error(
