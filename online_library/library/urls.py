@@ -14,4 +14,6 @@ urlpatterns = [
     path('admin/increase_copies/<int:id>/', views.increase_copies, name='increase_copies'),
     path('admin/decrease_copies/<int:id>/', views.decrease_copies, name='decrease_copies'),
     path('admin/delete_book/<int:id>/', views.delete_book, name='delete_book'),
+    path('book/<int:id>/', views.book_details, name='book_details'),
+    path('borrow/<int:book_id>/', views.borrow_book, name='borrow_book'),
 ]

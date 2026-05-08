@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .models import Profile, Book
+from .models import Profile, Book, BorrowRecord
 import re
 
 def home(request):
@@ -16,7 +16,37 @@ def borrowed_books(request):
 
 @login_required
 def user_books(request):
-    return render(request, 'user_books.html')
+    books = Book.objects.all()
+    context = {
+        'books': books
+    }
+    return render(request, 'user_books.html', context)
+
+@login_required
+def book_details(request, id):
+    book = Book.objects.get(id=id)
+    context = {
+        'book': book
+    }
+    return render(request, 'user_book_details.html', context)
+
+@login_required
+def borrow_book(request, book_id):
+
+    book = Book.objects.get(id=book_id)
+
+    if book.copies > 0:
+
+        BorrowRecord.objects.create(
+            user=request.user,
+            book=book
+        )
+
+        book.copies -= 1
+
+        book.save()
+
+    return redirect('borrowed_books')
 
 @login_required
 def search(request):
