@@ -33,21 +33,30 @@ def book_details(request, id):
 @login_required
 def borrow_book(request, book_id):
 
-    book = Book.objects.get(id=book_id)
+    book = get_object_or_404(Book, id=book_id)
+
+    already_borrowed = BorrowRecord.objects.filter(
+        user=request.user,
+        book=book,
+        returned=False
+    ).exists()
+
+    if already_borrowed:
+        return redirect('books') # IMPLEMENT UNBORROW THEN REMOVE COMMENT  - 3omda to El-Hendy
 
     if book.copies > 0:
 
         BorrowRecord.objects.create(
             user=request.user,
-            book=book
+            book=book,
+            returned=False
         )
 
         book.copies -= 1
-
         book.save()
 
-    return redirect('borrowed_books')
-
+    return redirect('books')
+    
 @login_required
 def search(request):
     title = request.GET.get('title', '')
