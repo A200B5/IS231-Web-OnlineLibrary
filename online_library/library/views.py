@@ -42,7 +42,7 @@ def borrow_book(request, book_id):
     ).exists()
 
     if already_borrowed:
-        return redirect('books') # IMPLEMENT UNBORROW THEN REMOVE COMMENT  - 3omda to El-Hendy
+        return redirect(request.META.get('HTTP_REFERER', 'home')) # IMPLEMENT UNBORROW THEN REMOVE COMMENT  - 3omda to El-Hendy
 
     if book.copies > 0:
 
@@ -55,7 +55,7 @@ def borrow_book(request, book_id):
         book.copies -= 1
         book.save()
 
-    return redirect('books')
+    return redirect(request.META.get('HTTP_REFERER', 'home'))
     
 @login_required
 def search(request):
